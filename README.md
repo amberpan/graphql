@@ -2,11 +2,11 @@ GraphQL API with Spring Boot
 ---
 This sample application is developed to understand basic concepts of GraphQL. In memory H2 database was used for storage.
 
-####Learning Materials:
+Learning Materials:
 - https://graphql.org/learn/
 - https://www.baeldung.com/spring-graphql
 
-####Queries
+Queries
 ##### Query by employee ID
  ````
 query {
