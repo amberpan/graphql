@@ -6,7 +6,7 @@ Learning Materials:
 - https://graphql.org/learn/
 - https://www.baeldung.com/spring-graphql
 
-Queries
+#### Queries
 ##### Query by employee ID
  ````
 query {
@@ -15,7 +15,7 @@ query {
     }
 }
 ````
-#####Query by first name
+##### Query by first name
 ````
 query {
     employeeByFirstName(firstName: "E"){
@@ -26,8 +26,8 @@ query {
 }
 ````
 ---
-####Mutations
-#####Add new employee   
+#### Mutations
+##### Add new employee   
 ````
 mutation{
     addEmployee(employeeId: 1, firstName: "G", lastName: "U", department: "WM"){
