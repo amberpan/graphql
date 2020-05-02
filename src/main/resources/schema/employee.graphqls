@@ -10,22 +10,12 @@ type Employee {
     lastName: String
     department: String
 }
-#Example query:
-#query {
-#    employee(employeeId: 1){
-#        firstName
-#    }
-#}
+
 type EmployeeQuery{
     employee(employeeId: Int): Employee
+    employeeByFirstName(firstName: String): [Employee]
 }
 
-#Example Mutation:
-#mutation{
-#    addEmployee(employeeId: 1, firstName: "G", lastName: "U", department: "WM"){
-#        firstName
-#    }
-#}
 type EmployeeMutation{
     addEmployee(employeeId: Int!, firstName: String!, lastName: String!, department: String): Employee
 }
