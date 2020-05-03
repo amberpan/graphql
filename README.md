@@ -25,6 +25,49 @@ query {
     }
 }
 ````
+##### Query with complex type(Adress)
+````
+query{
+    employeeByFirstName(firstName: "E"){
+        employeeId
+        firstName
+        lastName
+        address{
+            city
+            state
+            country
+        }
+    }
+````
+##### Query for city
+````
+query{
+    city(city: "ABC"){
+        city
+        state
+    }
+}
+````
+##### Querying multiple types
+````
+query{
+    employeeByFirstName(firstName: "E"){
+        employeeId
+        firstName
+        lastName
+        address{
+            city
+            state
+            country
+        }
+    }
+    
+    city(city: "ABC"){
+        city
+        state
+    }
+}
+````
 ---
 #### Mutations
 ##### Add new employee   
