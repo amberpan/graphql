@@ -1,6 +1,8 @@
 package com.sample.graphql.query;
 
+import com.sample.graphql.dao.AddressDao;
 import com.sample.graphql.dao.EmployeeDao;
+import com.sample.graphql.model.Address;
 import com.sample.graphql.model.Employee;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.slf4j.Logger;
@@ -19,6 +21,9 @@ public class Query implements GraphQLQueryResolver {
     @Autowired
     EmployeeDao employeeDao;
 
+    @Autowired
+    AddressDao addressDao;
+
     public Employee getEmployee(int id) {
         LOGGER.info("Invoking Employee get for ID: {}", id);
         Optional<Employee> e = employeeDao.findById(id);
@@ -29,5 +34,9 @@ public class Query implements GraphQLQueryResolver {
 
     public List<Employee> getEmployeeByFirstName(String firstName) {
         return employeeDao.findByFirstName(firstName);
+    }
+
+    public Address getCity(String cityName) {
+        return addressDao.findByCity(cityName);
     }
 }

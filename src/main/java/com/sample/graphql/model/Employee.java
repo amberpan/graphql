@@ -2,8 +2,7 @@ package com.sample.graphql.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -12,6 +11,17 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String department;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "zip")
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public int getEmployeeId() {
         return employeeId;
@@ -52,6 +62,7 @@ public class Employee {
                 .append("firstName", firstName)
                 .append("lastName", lastName)
                 .append("department", department)
+                .append("address", address)
                 .toString();
     }
 }

@@ -9,11 +9,20 @@ type Employee {
     firstName: String
     lastName: String
     department: String
+    address: Address
+}
+
+type Address{
+    city: String
+    state: String
+    country: String
+    zip: Int
 }
 
 type EmployeeQuery{
     employee(employeeId: Int): Employee
     employeeByFirstName(firstName: String): [Employee]
+    city(city: String): Address
 }
 
 type EmployeeMutation{
