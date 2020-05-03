@@ -78,3 +78,13 @@ mutation{
     }
 }
 ````
+
+#### Subscriptions
+URL: ws://localhost:8080/subscription
+````
+subscription NewEmployeeSubscription{
+    newEmployee{
+        employeeId
+    }
+}
+````

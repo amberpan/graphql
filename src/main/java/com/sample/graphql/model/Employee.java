@@ -19,40 +19,46 @@ public class Employee {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public int getEmployeeId() {
         return employeeId;
-    }
-
-    public void setEmployeeId(int id) {
-        this.employeeId = id;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public Employee setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+        return this;
+    }
+
+    public Employee setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public Employee setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public Employee setDepartment(String department) {
         this.department = department;
+        return this;
+    }
+
+    public Employee setAddress(Address address) {
+        this.address = address;
+        return this;
     }
 
     @Override

@@ -1,7 +1,7 @@
 #Schema definition to map query and mutation to respective definitions.
 schema {
-    query: EmployeeQuery
-    mutation: EmployeeMutation
+    query: Query
+    mutation: Mutation
 }
 
 type Employee {
@@ -16,15 +16,21 @@ type Address{
     city: String
     state: String
     country: String
-    zip: Int
+    zip: Int!
 }
 
-type EmployeeQuery{
+type Query{
     employee(employeeId: Int): Employee
     employeeByFirstName(firstName: String): [Employee]
     city(city: String): Address
 }
 
-type EmployeeMutation{
+type Mutation{
     addEmployee(employeeId: Int!, firstName: String!, lastName: String!, department: String): Employee
 }
+
+#Commented as code is failing to invoke due to JSON parsing exception
+#Issue opened https://github.com/graphql-java-kickstart/graphql-spring-boot/issues/366
+#type Subscription{
+#    newEmployee: Employee!
+#}
